@@ -1,4 +1,3 @@
-// sixd.rs
 use std::collections::{HashMap, HashSet, VecDeque};
 
 pub struct Graph {
