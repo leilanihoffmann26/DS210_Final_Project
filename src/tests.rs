@@ -1,10 +1,10 @@
 #[cfg(test)]
 mod tests {
-    use crate::sixd::Graph;
+    use crate::function::function::Graph;
 
     #[test]
     fn test_six_degrees_of_separation() {
-        // Test graph
+
         let edges = vec![
             ("Kennington Lane Rail Bridge, Vauxhall".to_string(), "Albert Embankment, Vauxhall".to_string()),
             ("Kennington Lane Rail Bridge, Vauxhall".to_string(), "Albert Embankment, Vauxhall".to_string()),
@@ -23,15 +23,18 @@ mod tests {
         let graph = Graph::new(edges);
 
         // Test case: Stations "Kennington Lane Rail Bridge, Vauxhall" and "Albert Embankment, Vauxhall" are connected within six degrees of separation
-        assert_eq!(
-            graph.six_degrees_of_separation("Kennington Lane Rail Bridge, Vauxhall", "Albert Embankment, Vauxhall"),
-            Some(5)
-        );
+        match graph.six_degrees_of_separation("Kennington Lane Rail Bridge, Vauxhall", "Albert Embankment, Vauxhall") {
+            Ok(distance) => {
+                assert_eq!(distance, 1);
+            }
+            Err(err) => {
+                panic!("Unexpected error: {}", err);
+            }
+        }
     }
 
     #[test]
     fn test_average_degree_of_separation() {
-        // Test graph
         let edges = vec![
             ("Kennington Lane Rail Bridge, Vauxhall".to_string(), "Albert Embankment, Vauxhall".to_string()),
             ("Kennington Lane Rail Bridge, Vauxhall".to_string(), "Albert Embankment, Vauxhall".to_string()),
@@ -60,7 +63,6 @@ mod tests {
 
     #[test]
     fn test_mean_and_median_degree_of_separation() {
-        // Define a test graph
         let edges = vec![
             ("Kennington Lane Rail Bridge, Vauxhall".to_string(), "Albert Embankment, Vauxhall".to_string()),
             ("Kennington Lane Rail Bridge, Vauxhall".to_string(), "Albert Embankment, Vauxhall".to_string()),
