@@ -1,16 +1,16 @@
 # DS210_Final_Project
 
-# 🚲 London Bike-Share Graph Analysis
+# London Bike-Share Graph Analysis
 
 This project analyzes bike ride data from the **Transport for London Cycle Hire System**, modeling the system as a graph to explore network connectivity, centrality, and urban mobility patterns.
 
-## 📊 Dataset
+## Dataset
 
 - **Source:** [Kaggle - London Bike Share Usage Dataset](https://www.kaggle.com/datasets/kalacheva/london-bike-share-usage-dataset)
 - **Rides:** 776,527 unique bike journeys
 - **Fields Used:** Start station, end station, trip duration
 
-## 📌 Project Summary
+## Project Summary
 
 - Each **station** is treated as a node.
 - Each **trip** is treated as a directed edge between nodes.
@@ -19,7 +19,7 @@ This project analyzes bike ride data from the **Transport for London Cycle Hire 
   - Average, mean, and median degrees of separation
   - Centrality of stations
 
-## 🛠 File Descriptions
+## File Descriptions
 
 ### `function.rs`
 
@@ -49,7 +49,7 @@ Unit testing module with:
 - `test_mean_and_median_degree_of_separation()`  
   Checks accuracy of summary statistics
 
-## ✅ Results
+## Results
 
 - ✅ `six_degrees_of_separation` test: Passed  
 - ❌ Average/Median separation tests: Failed (under review)
@@ -58,21 +58,21 @@ Unit testing module with:
 
 The code runs and produces output, but some metric calculations need debugging for full accuracy.
 
-## 🔮 Future Work
+## Future Work
 
 - Debug and improve failing unit tests
 - Add visualizations using Graphviz or Plotters
 - Extend analysis to additional cities and datasets
 - Explore real-time data applications
 
-## 🧰 Technologies Used
+## Technologies Used
 
 - Rust (core language)
 - CSV parsing (Rust standard library)
 - Breadth-First Search (BFS)
 - Unit testing with `#[cfg(test)]`
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [Kaggle Dataset by Kalacheva](https://www.kaggle.com/datasets/kalacheva/london-bike-share-usage-dataset)
 - Rust documentation and community for graph algorithms and testing support
